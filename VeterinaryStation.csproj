@@ -463,6 +463,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\AdminView.cshtml" />
+    <Content Include="Views\Shared\DoktorView.cshtml" />
+    <Content Include="Views\Shared\TehnicarView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,179 @@
+﻿
+@{
+    Layout = null;
+}
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo">Upravljanje pacijentima<i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo" class="collapse">
+        <li>
+
+            @Ajax.ActionLink("Dodaj novog pacijenta", "Create", "Pacijent", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpozivNalozi" })
+
+        </li>
+
+
+        <li>
+
+            @Ajax.ActionLink("Obriši pacijenta", "Delete", "Pacijent", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpozivNalozi" })
+
+        </li>
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo2">Upravljanje lijekovima <i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo2" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Dodaj novi lijek", "Create", "Lijekovi", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Obriši lijek", "Delete", "Lijekovi", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+        </li>
+
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo3">Upravljanje dijagnozama <i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo3" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Dodaj novu dijagnozu", "Create", "Dijagnoza", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Obriši dijagnozu", "Delete", "Dijagnoza", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo5">Upravljanje pregledima <i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo5" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Dodaj novi pregled", "Create", "Pregledi", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Obriši pregled", "Delete", "Pregledi", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo6">Upravljanje uspostavljenim dijagnozama<i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo6" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Dodaj uspostavljenu dijagnozu", "Create", "UspostavljenaDijagnoza", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Obriši uspostavljenu dijagnozu", "Delete", "UspostavljenaDijagnoza", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Pregledaj uspostavljene dijagnoze", "Index", "UspostavljenaDijagnoza", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxliste" })
+
+        </li>
+
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo4">Upravljanje vlasnicima <i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo4" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Dodaj novog vlasnika", "Create", "Vlasnici", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpozivNalozi" })
+
+        </li>
+
+
+
+        <li>
+
+            @Ajax.ActionLink("Obriši vlasnika", "Delete", "Vlasnici", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpozivNalozi" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Prikaži vlasnike", "Index", "Vlasnici", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxliste" })
+
+        </li>
+
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo22">Upravljanje vrstama <i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo22" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Dodaj novu vrstu", "Create", "Vrsta", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+        </li>
+
+
+        <li>
+
+            @Ajax.ActionLink("Prikaži sve vrste", "Index", "Vrsta", new { area = "ModulDoktor" }, new AjaxOptions { UpdateTargetId = "ajaxliste" })
+
+        </li>
+
+
+    </ul>
+
+</li>
