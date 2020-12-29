@@ -1,0 +1,37 @@
+﻿@model VeterinaryStation.Areas.ModulTehnickoOsoblje.Models.Uplate
+@{
+    ViewBag.Title = "Brisanje";
+    Layout = null;
+}
+<h2>Brisanje</h2>
+@using (Ajax.BeginForm("Obrisi", "Uplate", FormMethod.Post, new AjaxOptions { UpdateTargetId = "ajaxpoziv" }))
+{
+    if (TempData["Message"] != null)
+    {
+        <div>
+            <h3>@TempData["Message"]</h3>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        <h4>Uplate</h4>
+        <hr />
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Id, Model.listaUplata.Select(model => new SelectListItem
+           {
+               Value = model.Id.ToString(),
+               Text = model.Id.ToString()
+           }).ToList(), null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" />
+
+        </div>
+    </div>
+}

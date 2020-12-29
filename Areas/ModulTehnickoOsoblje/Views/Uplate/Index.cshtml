@@ -1,0 +1,54 @@
+﻿@model IEnumerable<VeterinaryStation.Models.Uplata>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Kreiraj", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Iznos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RacuniId)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Iznos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RacuniId)
+            </td>
+            <td>
+                @Ajax.ActionLink("Izmijeni", "Edit", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxpoziv" }, new { @class = "btn btn-default" })
+
+            </td>
+        </tr>
+        }
+
+    </table>
+</body>
+</html>

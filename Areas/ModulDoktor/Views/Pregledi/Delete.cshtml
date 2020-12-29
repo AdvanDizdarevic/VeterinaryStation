@@ -1,0 +1,37 @@
+﻿@model VeterinaryStation.Areas.ModulDoktor.Models.Pregled
+@{
+    ViewBag.Title = "Brisanje";
+    Layout = null;
+}
+<h2>Brisanje</h2>
+@using (Ajax.BeginForm("Obrisi", "Pregledi", FormMethod.Post, new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" }))
+{
+    if (TempData["Message"] != null)
+    {
+        <div>
+            <h3>@TempData["Message"]</h3>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        <h4>Pregledi</h4>
+        <hr />
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Id, Model.listaPregleda.Select(model => new SelectListItem
+           {
+               Value = model.Id.ToString(),
+               Text = model.DatumPregleda.ToString()
+           }).ToList(), null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" />
+
+        </div>
+    </div>
+}

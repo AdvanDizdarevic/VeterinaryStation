@@ -1,0 +1,159 @@
+﻿
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Korisnički nalozi <i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Kreiraj korisnički nalog", "Create", "KorisnickiNalogs", new { area = "ModulKorisnickiNalog" }, new AjaxOptions { UpdateTargetId = "ajaxpozivNalozi" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Obriši korisnički nalog", "Delete", "KorisnickiNalogs", new { area = "ModulKorisnickiNalog" }, new AjaxOptions { UpdateTargetId = "ajaxpozivNalozi" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Aktivacija/Deaktivacija korisničkog naloga", "EditNeaktivne", "KorisnickiNalogs", new { area = "ModulKorisnickiNalog" }, new AjaxOptions { UpdateTargetId = "ajaxpozivNalozi" })
+
+        </li>
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Korisnici<i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo1" class="collapse">
+
+        <li>
+
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo11">Dodaj novog korisnika <i class="fa fa-fw fa-caret-down"></i></a>
+
+            <ul id="demo11" class="collapse">
+
+                <li>
+
+                    @Ajax.ActionLink("Dodaj novog administratora", "Create", "Administrator", new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+                </li>
+
+                <li>
+
+                    @Ajax.ActionLink("Dodaj novog doktora", "Create", "Doktor", new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+                </li>
+
+                <li>
+
+                    @Ajax.ActionLink("Dodaj novog Tehnicara", "Create", "Tehnicko_osoblje", new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo13">Brisanje korisnika <i class="fa fa-fw fa-caret-down"></i></a>
+
+            <ul id="demo13" class="collapse">
+
+                <li>
+
+                    @Ajax.ActionLink("Brisanje administratora", "Delete", "Administrator", new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+                </li>
+
+                <li>
+
+                    @Ajax.ActionLink("Brisanje doktora", "Delete", "Doktor", new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+                </li>
+
+                <li>
+
+                    @Ajax.ActionLink("Brisanje tehnicara", "Delete", "Tehnicko_osoblje", new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" })
+
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo14">Pregled liste korisnika <i class="fa fa-fw fa-caret-down"></i></a>
+
+            <ul id="demo14" class="collapse">
+
+                <li>
+
+                    @Ajax.ActionLink("Pregled liste administratora", "Index", "Administrator", new AjaxOptions { UpdateTargetId = "ajaxliste" })
+
+                </li>
+
+                <li>
+
+                    @Ajax.ActionLink("Pregled liste doktora", "Index", "Doktor", new AjaxOptions { UpdateTargetId = "ajaxliste" })
+
+                </li>
+
+                <li>
+
+                    @Ajax.ActionLink("Pregled liste tehnickog osoblja", "Index", "Tehnicko_osoblje", new AjaxOptions { UpdateTargetId = "ajaxliste" })
+
+                </li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+
+</li>
+
+<li>
+
+    <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-arrows-v"></i> Unos novih podataka <i class="fa fa-fw fa-caret-down"></i></a>
+
+    <ul id="demo2" class="collapse">
+
+        <li>
+
+            @Ajax.ActionLink("Unos gradova", "Create", "Gradovi", new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Unos odjela", "Create", "Odjeli", new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Unos stručnih sprema", "Create", "StrucneSpreme", new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+        <li>
+
+            @Ajax.ActionLink("Unos zvanja", "Create", "Zvanjes", new AjaxOptions { UpdateTargetId = "ajaxpoziv" })
+
+        </li>
+
+    </ul>
+
+</li>
+
+

@@ -1,0 +1,36 @@
+﻿@model VeterinaryStation.Areas.ModulAdmin.Models.DeleteVM
+@{
+    Layout = null;
+}
+
+@using (Ajax.BeginForm("Obrisi", "Doktor", FormMethod.Post, new AjaxOptions { UpdateTargetId = "ajaxpozivKorisnici" }))
+{
+    if (TempData["Message"] != null)
+    {
+        <div>
+            <h3>@TempData["Message"]</h3>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        <h4>Doktor </h4>
+        <hr />
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DoktorId, Model.listaDoktora.Select(model => new SelectListItem
+           {
+               Value = model.Id.ToString(),
+               Text = model.Ime
+           }).ToList(), null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obrisi" class="btn btn-default" />
+
+        </div>
+    </div>
+}
