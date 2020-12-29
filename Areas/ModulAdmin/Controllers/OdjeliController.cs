@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using VeterinaryStation.Areas.ModulAdmin.Models;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
@@ -23,8 +16,8 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         // GET: ModulAdmin/Odjeli/Create
         public ActionResult Create()
         {
-            PodaciAddVM model = new PodaciAddVM();  
-            return View("Create",model);
+            PodaciAddVM model = new PodaciAddVM();
+            return View("Create", model);
         }
 
         // POST: ModulAdmin/Odjeli/Create
@@ -32,19 +25,20 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( PodaciAddVM vm)
+        public ActionResult Create(PodaciAddVM vm)
         {
-            Odjeli odjeli  = new Odjeli();
-            if (ModelState.IsValid) {
+            Odjeli odjeli = new Odjeli();
+            if (ModelState.IsValid)
+            {
                 odjeli.Naziv = vm.Naziv;
                 db.Odjelii.Add(odjeli);
                 db.SaveChanges();
 
-            TempData["Message"] = "Uspjesno dodavanje!";
-            return RedirectToAction("Create");
-        }
+                TempData["Message"] = "Uspjesno dodavanje!";
+                return RedirectToAction("Create");
+            }
             return View(vm);
-    }
+        }
 
 
 

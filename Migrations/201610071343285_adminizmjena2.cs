@@ -1,8 +1,7 @@
 namespace VeterinaryStation.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class adminizmjena2 : DbMigration
     {
         public override void Up()
@@ -12,7 +11,7 @@ namespace VeterinaryStation.Migrations
             RenameIndex(table: "dbo.Administrators", name: "IX_StrucneSpreme_Id", newName: "IX_StrucneSpremeId");
             RenameIndex(table: "dbo.Administrators", name: "IX_Gradovi_Id", newName: "IX_GradoviId");
         }
-        
+
         public override void Down()
         {
             RenameIndex(table: "dbo.Administrators", name: "IX_GradoviId", newName: "IX_Gradovi_Id");

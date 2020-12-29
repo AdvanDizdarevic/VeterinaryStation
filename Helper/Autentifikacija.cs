@@ -1,8 +1,4 @@
-﻿ using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using VeterinaryStation.DAL;
+﻿using System.Web;
 using VeterinaryStation.Models;
 
 namespace VeterinaryStation.Helper

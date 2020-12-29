@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using VeterinaryStation.Areas.ModulAdmin.Models;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
@@ -17,12 +10,12 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
     public class ZvanjesController : Controller
     {
         private VeterinaryStationContext db = new VeterinaryStationContext();
-     
+
         // GET: ModulAdmin/Zvanjes/Create
         public ActionResult Create()
         {
             PodaciAddVM model = new PodaciAddVM();
-            return View("Create",model);
+            return View("Create", model);
         }
 
         // POST: ModulAdmin/Zvanjes/Create
@@ -31,8 +24,8 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(PodaciAddVM vm)
-        { 
-     
+        {
+
             Zvanje zvanje = new Zvanje();
             if (ModelState.IsValid)
             {

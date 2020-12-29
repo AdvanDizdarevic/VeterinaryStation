@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.SqlServer;
+﻿using System.Data;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using VeterinaryStation.Areas.ModulAdmin.Models;
 using VeterinaryStation.Areas.ModulDoktor.Models;
-using VeterinaryStation.Areas.ModulKorisnickiNalog.Models;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
 using VeterinaryStation.Models;
@@ -116,7 +108,7 @@ namespace VeterinaryStation.Areas.ModulDoktor.Controllers
             if (db.Vlasnici.SingleOrDefault(x => x.Id == id) != null)
             {
                 db.Pacijenti.Remove(db.Pacijenti.FirstOrDefault(x => x.VlasnikId == id));
-                db.Vlasnici.Remove(db.Vlasnici.FirstOrDefault(x => x.Id == id));    
+                db.Vlasnici.Remove(db.Vlasnici.FirstOrDefault(x => x.Id == id));
                 db.SaveChanges();
 
                 return RedirectToAction("Delete");

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using VeterinaryStation.Areas.ModulAdmin.Models;
-using VeterinaryStation.Areas.ModulKorisnickiNalog.Controllers;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
 using VeterinaryStation.Models;
@@ -66,28 +62,29 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         {
             KorisnickiNalog k = db.KorisnickiNalozi.Find(vm.KorisnickiNalogId);
             Doktor a = new Doktor();
-            if (ModelState.IsValid) { 
-            a.Id = vm.KorisnickiNalogId;
-            a.Ime = vm.Ime;
-            a.Prezime = vm.Prezime;
-            a.ZvanjeId = vm.ZvanjeId;
-            a.GradoviId = vm.GradoviId;
-            a.KorisnickiNalogId = vm.KorisnickiNalogId;
-            a.Pozicija = vm.Pozicija;
-            a.IsDeleted = false;
+            if (ModelState.IsValid)
+            {
+                a.Id = vm.KorisnickiNalogId;
+                a.Ime = vm.Ime;
+                a.Prezime = vm.Prezime;
+                a.ZvanjeId = vm.ZvanjeId;
+                a.GradoviId = vm.GradoviId;
+                a.KorisnickiNalogId = vm.KorisnickiNalogId;
+                a.Pozicija = vm.Pozicija;
+                a.IsDeleted = false;
                 k.Aktivan = true;
-            db.Doktori.Add(a);
-            db.SaveChanges();
+                db.Doktori.Add(a);
+                db.SaveChanges();
 
 
                 TempData["Message"] = "Uspjesno dodavanje!";
                 return RedirectToAction("Create");
-        }
-            vm.listaNaloga = db.KorisnickiNalozi.Where(x => x.doc == true && x.IsDeleted == false && x.Aktivan.Value==false).ToList();
+            }
+            vm.listaNaloga = db.KorisnickiNalozi.Where(x => x.doc == true && x.IsDeleted == false && x.Aktivan.Value == false).ToList();
             vm.listaZavnja = db.Zvanja.ToList();
             vm.listaGradova = db.Gradovii.ToList();
             return View(vm);
-    }
+        }
         // GET: ModulAdmin/Doktor/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -119,7 +116,7 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
             if (ModelState.IsValid)
             {
                 a = db.Doktori.Find(vm.Id);
-             
+
                 a.Ime = vm.Ime;
                 a.Prezime = vm.Prezime;
                 a.ZvanjeId = vm.ZvanjeId;

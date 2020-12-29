@@ -2,17 +2,17 @@
 
 namespace VeterinaryStation.Areas.ModulKorisnickiNalog
 {
-    public class ModulKorisnickiNalogAreaRegistration : AreaRegistration 
+    public class ModulKorisnickiNalogAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "ModulKorisnickiNalog";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "ModulKorisnickiNalog_default",

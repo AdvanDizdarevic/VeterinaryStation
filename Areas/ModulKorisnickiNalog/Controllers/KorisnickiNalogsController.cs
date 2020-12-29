@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Services.Description;
 using VeterinaryStation.Areas.ModulKorisnickiNalog.Models;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
 using VeterinaryStation.Models;
-using VeterinaryStation.Helper;
 
 namespace VeterinaryStation.Areas.ModulKorisnickiNalog.Controllers
 {

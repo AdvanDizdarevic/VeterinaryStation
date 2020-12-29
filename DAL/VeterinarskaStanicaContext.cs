@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using VeterinaryStation.Models;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using VeterinaryStation.Models;
 
 namespace VeterinaryStation.DAL
 {
-    public class VeterinaryStationContext:DbContext
-    {   
+    public class VeterinaryStationContext : DbContext
+    {
 
         public VeterinaryStationContext()
             : base("MojConnection")

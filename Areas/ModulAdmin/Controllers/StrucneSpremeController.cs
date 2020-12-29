@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using VeterinaryStation.Areas.ModulAdmin.Models;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
@@ -18,13 +11,13 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
     {
         private VeterinaryStationContext db = new VeterinaryStationContext();
 
-      
-        
+
+
         // GET: ModulAdmin/StrucneSpreme/Create
         public ActionResult Create()
         {
             PodaciAddVM model = new PodaciAddVM();
-            return View("Create",model);
+            return View("Create", model);
         }
 
         // POST: ModulAdmin/StrucneSpreme/Create
@@ -35,17 +28,18 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         public ActionResult Create(PodaciAddVM vm)
         {
             StrucneSpreme strucneSpreme = new StrucneSpreme();
-            if (ModelState.IsValid) {
+            if (ModelState.IsValid)
+            {
                 strucneSpreme.Naziv = vm.Naziv;
                 db.StrucneSpremee.Add(strucneSpreme);
                 db.SaveChanges();
 
-            TempData["Message"] = "Uspjesno dodavanje!";
+                TempData["Message"] = "Uspjesno dodavanje!";
 
-            return RedirectToAction("Create");
-        }
+                return RedirectToAction("Create");
+            }
             return View(vm);
-    }
+        }
 
 
         protected override void Dispose(bool disposing)

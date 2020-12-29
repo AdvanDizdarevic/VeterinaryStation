@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using VeterinaryStation.Areas.ModulAdmin.Models;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
@@ -22,7 +15,7 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         public ActionResult Create()
         {
             PodaciAddVM model = new PodaciAddVM();
-            return View("Create",model);
+            return View("Create", model);
         }
 
         // POST: ModulAdmin/Gradovi/Create

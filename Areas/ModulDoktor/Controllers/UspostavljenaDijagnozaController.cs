@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.SqlServer;
+﻿using System.Data;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using VeterinaryStation.Areas.ModulAdmin.Models;
 using VeterinaryStation.Areas.ModulDoktor.Models;
-using VeterinaryStation.Areas.ModulKorisnickiNalog.Models;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
 using VeterinaryStation.Models;
@@ -19,7 +11,7 @@ namespace VeterinaryStation.Areas.ModulDoktor.Controllers
     [Autorizacija(KorisnickeUloge.Doktor)]
     public class UspostavljenaDijagnozaController : Controller
     {
-        
+
         private VeterinaryStationContext db = new VeterinaryStationContext();
         [Autorizacija(KorisnickeUloge.Doktor)]
         // GET: ModulDoktor/UspostavljenaDijagnoza

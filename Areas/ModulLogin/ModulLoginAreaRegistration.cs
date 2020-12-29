@@ -2,17 +2,17 @@
 
 namespace VeterinaryStation.Areas.ModulLogin
 {
-    public class ModulLoginAreaRegistration : AreaRegistration 
+    public class ModulLoginAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "ModulLogin";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "ModulLogin_default",

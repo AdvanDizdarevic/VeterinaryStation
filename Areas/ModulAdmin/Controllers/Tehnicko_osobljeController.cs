@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using VeterinaryStation.Areas.ModulAdmin.Models;
 using VeterinaryStation.DAL;
@@ -43,17 +40,17 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         public ActionResult Create()
         {
 
-           
+
             TehnicarDodajVM model = new TehnicarDodajVM()
-            {   
-                listaNaloga = db.KorisnickiNalozi.Where(x => x.teh_osob == true && x.IsDeleted == false && x.Aktivan.Value==false).ToList(),
+            {
+                listaNaloga = db.KorisnickiNalozi.Where(x => x.teh_osob == true && x.IsDeleted == false && x.Aktivan.Value == false).ToList(),
                 listaOdjela = db.Odjelii.ToList(),
                 listaGradova = db.Gradovii.ToList()
             };
 
 
 
-            return View("Create",model);
+            return View("Create", model);
         }
 
         // POST: ModulAdmin/Administrator/Create
@@ -62,13 +59,13 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TehnicarDodajVM vm)
-        {  
+        {
             Tehnicko_osoblje a = new Tehnicko_osoblje();
             KorisnickiNalog k = db.KorisnickiNalozi.Find(vm.KorisnickiNalogId);
             if (ModelState.IsValid)
             {
-                
-            
+
+
                 a.Id = vm.KorisnickiNalogId;
                 a.Ime = vm.Ime;
                 a.Prezime = vm.Prezime;
@@ -78,18 +75,18 @@ namespace VeterinaryStation.Areas.ModulAdmin.Controllers
                 a.Vrsta_posla = vm.Vrsta_posla;
                 a.IsDeleted = false;
                 k.Aktivan = true;
-            
 
-            db.Tehnicka_osoblja.Add(a);
-            db.SaveChanges();
 
-          
+                db.Tehnicka_osoblja.Add(a);
+                db.SaveChanges();
 
-            TempData["Message"] = "Uspjesno dodavanje!";
+
+
+                TempData["Message"] = "Uspjesno dodavanje!";
                 return RedirectToAction("Create");
-            
+
             }
-            
+
             vm.listaNaloga = db.KorisnickiNalozi.Where(x => x.teh_osob == true && x.IsDeleted == false && x.Aktivan.Value == false).ToList();
             vm.listaOdjela = db.Odjelii.ToList();
             vm.listaGradova = db.Gradovii.ToList();

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using VeterinaryStation.DAL;
 using VeterinaryStation.Helper;
@@ -35,7 +32,7 @@ namespace VeterinaryStation.Areas.ModulLogin.Controllers
             //    Aktivan = true
             //};
 
-            KorisnickiNalog k  = ctx.KorisnickiNalozi.SingleOrDefault(x => x.Username == username && x.Password == password);
+            KorisnickiNalog k = ctx.KorisnickiNalozi.SingleOrDefault(x => x.Username == username && x.Password == password);
 
             if (k == null)
             {

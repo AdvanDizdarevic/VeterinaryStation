@@ -1,8 +1,7 @@
 namespace VeterinaryStation.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class doktorIzmjena : DbMigration
     {
         public override void Up()
@@ -13,7 +12,7 @@ namespace VeterinaryStation.Migrations
             RenameIndex(table: "dbo.Doktors", name: "IX_Zvanje_Id", newName: "IX_ZvanjeId");
             AddColumn("dbo.Doktors", "KorisnickiNalogId", c => c.Int(nullable: false));
         }
-        
+
         public override void Down()
         {
             DropColumn("dbo.Doktors", "KorisnickiNalogId");
